@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<body>
+    <h1>Offer Confirmation</h1>
+    {% if confirmation_code %}
+        <p>Your confirmation code: {{ confirmation_code }}</p>
+        <p>Present this code at the shop counter to redeem your offer.</p>
+        
+    {% else %}
+        <p>Sorry, there was an error generating the confirmation code.</p>
+    {% endif %}
+</body>
+
+{% endblock %}

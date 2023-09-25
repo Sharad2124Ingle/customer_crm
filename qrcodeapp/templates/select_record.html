@@ -1,0 +1,27 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Select a Record</h1>
+  <ul>
+    {% for record in records %}
+      <li>
+        <a href="{% url 'qrcodeapp:generate_qr_code' record.id %}">Record ID: {{ record.id }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <script>
+    // Function to refresh the page after 2 minutes (120000 milliseconds)
+    function refreshPage() {
+      setTimeout(function() {
+        location.reload(); // Reload the current page to refresh the content
+      }, 120000); // 2 minutes in milliseconds
+    }
+
+    // Call the refreshPage function when the page loads
+    window.onload = function() {
+      refreshPage();
+    };
+  </script>
+{% endblock %}

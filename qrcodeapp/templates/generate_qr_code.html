@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Generated QR Code</h1>
+<div class="qr-code-container">
+    
+    <img id="qr-code-image" src="{{qr_code.image.url }}?timestamp={{ timestamp }}" alt="QR Code">
+
+</div>
+{% endblock %}
+

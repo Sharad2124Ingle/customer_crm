@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+<body>
+
+    <h1>Offer Details</h1>
+    <p><strong>Name:</strong> {{ offer.name }}</p>
+    <p><strong>Description:</strong> {{ offer.description }}</p>
+    <p><strong>Valid Until:</strong> {{ offer.valid_until }}</p>
+    <br/>
+    <a href="{% url 'generate_qr' offer.id %}">Redeem Offer</a>
+    
+    
+
+    
+</body>
+
+{% endblock %}

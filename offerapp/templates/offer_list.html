@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<body>
+    <h1>Offer List</h1>
+    <ul>
+    {% for offer in offers %}
+        <li>
+            {{ offer.name }} - {{ offer.description }} - Expires: {{ offer.valid_until }}
+            {% if not offer.redeemed %}
+                <a href="{% url 'offer_details' offer.id %}">offer_details</a>
+            {% else %}
+                (Offer Redeemed)
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+
+{% endblock %}
