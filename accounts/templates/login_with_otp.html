@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3">
+
+<body>
+    <h1>Login with OTP</h1>
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username or Email:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <br/>
+        <input type="submit" value="Send OTP">
+    </form>
+</body>
+
+{% endblock %}
