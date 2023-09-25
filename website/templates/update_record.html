@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-6 offset-md-3"></div>
+
+<head>
+    <title>Update Record</title>
+</head>
+<body>
+    <h1>Update Record</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="record_id">Select Record ID:</label>
+        <select name="record_id" id="record_id">
+            {% for record in records %}
+                <option value="{{ record.id }}">{{ record.id }}</option>
+            {% endfor %}
+        </select>
+        {{ form.as_p }}
+        <button type="submit">Update</button>
+    </form>
+</body>
+
+{% endblock %}
